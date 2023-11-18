@@ -1,0 +1,17 @@
+font:
+  normal:
+    family: JetBrainsMono Nerd Font Mono
+    style: Bold
+  size: 12
+
+window:
+  title: Alacritty - zsh
+
+  opacity: 0.9
+
+
+import:
+    - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+    #- ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+    #- ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
+    #- ~/.config/alacritty/catppuccin/catppuccin-latte.yml

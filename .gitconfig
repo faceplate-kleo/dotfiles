@@ -1,0 +1,16 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	email = faceplatemusic@gmail.com
+	name = Kleo Davidson
+[push]
+	autoSetupRemote = true
