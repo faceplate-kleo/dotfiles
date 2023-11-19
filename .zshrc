@@ -15,7 +15,7 @@ languageprompt () {
 
 PS1='%B%F{magenta}Λ [%2~] %(1j.($(jobs -s | cut -d " " -f 6)) .)$(languageprompt) %f%b'
 
-[ -f "/home/kleo/.ghcup/env" ] && source "/home/kleo/.ghcup/env" # ghcup-env
+#[ -f "/home/kleo/.ghcup/env" ] && source "/home/kleo/.ghcup/env" # ghcup-env
 
 path=(/home/kleo/.local/bin $path)
 export PATH
@@ -35,3 +35,5 @@ alias purgeswaps='rm ~/.local/state/nvim/swap/*.swp'
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [[ ! "$TERM" = linux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+
+[ -f "/home/kleo/.ghcup/env" ] && source "/home/kleo/.ghcup/env" # ghcup-env
