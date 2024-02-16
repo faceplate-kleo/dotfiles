@@ -54,3 +54,4 @@ nitrogen --restore &
 picom --config /home/kleo/.config/picom.conf &
 i3-status &
 exec i3
+#exec xmonad
