@@ -34,8 +34,10 @@ export PATH
 export NVIM_CONFIG=/home/kleo/.config/nvim
 export I3_CONFIG=/home/kleo/.config/i3/config
 
-alias ls='ls -G'
-alias ll='ls -l -G'
+alias ls='ls -G --color'
+alias ll='ls -l -G --color'
+alias la='ls -a -G --color'
+alias lla='ls -l -a -G --color'
 alias celar='clear'
 alias cls='clear'
 alias clera='clear'
