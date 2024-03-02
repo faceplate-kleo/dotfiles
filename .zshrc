@@ -29,6 +29,8 @@ PS1='%B%F{magenta}Λ [%2~] %(1j.($(jobs -s | cut -d " " -f 6)) .)$(languagepromp
 #[ -f "/home/kleo/.ghcup/env" ] && source "/home/kleo/.ghcup/env" # ghcup-env
 
 path=(/home/kleo/.local/bin $path)
+path=(/home/kleo/VM $path)
+path=(/home/kleo/.cargo/bin $path)
 export PATH
 
 export NVIM_CONFIG=/home/kleo/.config/nvim

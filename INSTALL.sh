@@ -26,7 +26,7 @@ cd dotconfig
 for filename in *; do
     if [[ ! -L ~/.config/$filename ]]
     then
-        ln -s ~/.config/$filename $filename
+        ln -s $PWD/$filename ~/.config/$filename 
     else
         echo .config/$filename already linked 
     fi 
