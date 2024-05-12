@@ -10,7 +10,15 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [user]
-	email = faceplatemusic@gmail.com
+	email = itskleonow@gmail.com
 	name = Kleo Davidson
+	signingkey = 5DAE7BDACB0AEED4
 [push]
 	autoSetupRemote = true
+[core]
+	editor = nvim
+	excludesfile = /home/kleo/.gitignore
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
