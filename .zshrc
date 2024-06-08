@@ -24,7 +24,7 @@ languageprompt () {
     echo $PROMPT_SYMBOL
 }
 
-PS1='%B%F{magenta}Λ [%2~] %(1j.($(jobs -s | cut -d " " -f 6)) .)$(languageprompt) %f%b'
+PS1='%B%F{magenta}󰣇 [%2~] %(1j.($(jobs -s | cut -d " " -f 6)) .)$(languageprompt) %f%b'
 
 #[ -f "/home/kleo/.ghcup/env" ] && source "/home/kleo/.ghcup/env" # ghcup-env
 
