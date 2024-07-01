@@ -1,8 +1,8 @@
-font:
-  normal:
-    family: JetBrainsMono Nerd Font Mono
-    style: Bold
-  size: 12
+#font:
+#  normal:
+#    family: JetBrainsMono Nerd Font Mono
+#    style: Bold
+#  size: 12
 
 window:
   title: Alacritty - zsh

@@ -13,7 +13,7 @@ for filename in .*; do
 
     if [[ ! -L ~/$filename ]]
     then
-        ln -s $filename ~/$filename
+        ln -s $PWD/$filename ~/$filename
     else
         echo $filename already linked
     fi

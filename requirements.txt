@@ -1,0 +1,13 @@
+neovim
+polybar
+rofi
+pulseaudio-utils
+flameshot
+git
+gcc
+tmux
+zsh
+gimp
+chromium-browser
+fonts-jetbrains-mono
+solaar
