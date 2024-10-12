@@ -1,3 +1,14 @@
+# ==================================================================
+#
+#   ███╗   ██╗ █████╗ ██╗   ██╗███╗   ███╗███████╗███████╗██╗  ██╗
+#   ████╗  ██║██╔══██╗██║   ██║████╗ ████║██╔════╝██╔════╝██║  ██║
+#   ██╔██╗ ██║███████║██║   ██║██╔████╔██║█████╗  ███████╗███████║
+#   ██║╚██╗██║██╔══██║╚██╗ ██╔╝██║╚██╔╝██║██╔══╝  ╚════██║██╔══██║
+#   ██║ ╚████║██║  ██║ ╚████╔╝ ██║ ╚═╝ ██║███████╗███████║██║  ██║
+#   ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═╝     ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝
+#
+# ==================================================================
+
 include /home/kleo/.config/i3/common-config.i3
 
 set $mod Mod4
@@ -29,7 +40,10 @@ bindsym $mod+Shift+plus gaps outer all minus 5, gaps inner all minus 5
 bindsym $mod+Control+bar gaps horizontal all set 1024
 
 # Reset gapping
-bindsym $mod+Shift+bar gaps outer all set 20, gaps inner all set 20
+bindsym $mod+Shift+bar gaps outer all set 20px, gaps inner all set 20px
+
+# Go into super hyper ultra efficiency mode (gapless)
+bindsym $mod+Control+Shift+bar gaps outer all set 0, gaps inner all set 0
 
 # Remove title bars
 for_window [class="^.*"] border pixel 2
