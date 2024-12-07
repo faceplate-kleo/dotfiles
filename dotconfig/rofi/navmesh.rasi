@@ -1,0 +1,10 @@
+configuration {
+    modes: [ combi ];
+    combi-modes: [ window, drun ];
+}
+
+@theme "~/.config/rofi/lb-catppuccin-mocha.rasi"
+
+entry {
+    placeholder: "...";
+}

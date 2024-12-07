@@ -1,0 +1,12 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[character]
+success_symbol = '[Σ](bold blue)'
+error_symbol = '[Σ](bold red)'
+vimcmd_symbol = '[](bold green)'
+
+[directory]
+format = '[\[$path\]]($style)[$read_only]($read_only_style) '
+style = 'italic bright-green'
+truncation_length = 2
+truncate_to_repo = false
