@@ -150,6 +150,8 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+bindsym $mod+Control+r resize set 50 ppt
+
 # Copy/Paste
 bindsym --release $mod+c exec --no-startup-id xdotool key --clearmodifiers ctrl+shift+c
 bindsym --release $mod+v exec --no-startup-id xdotool key --clearmodifiers ctrl+shift+v

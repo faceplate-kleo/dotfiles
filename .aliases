@@ -23,3 +23,6 @@ alias terraform='tofu'
 alias tf='tofu'
 alias tfmt='tofu fmt -recursive'
 alias gimme='. gimme.zsh'
+
+alias fullscreen='xrandr --output DisplayPort-0 --mode 5120x1440'
+alias halfscreen='xrandr --output DisplayPort-0 --mode 2560x1440'

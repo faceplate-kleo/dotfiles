@@ -29,8 +29,11 @@ exec --no-startup-id picom --config ~/.config/picom.conf
 # bindsym $mod+Control+l exec --no-startup-id light-locker-command -l
 bindsym $mod+Control+l exec --no-startup-id /home/kleo/.config/i3/lock.sh
 
-gaps inner 20px
-gaps outer 20px
+set $inner 20px
+set $outer 10px
+
+gaps inner $inner
+gaps outer $outer
 
 bindsym $mod+Shift+minus gaps outer all plus 5, gaps inner all plus 5
 bindsym $mod+Shift+plus gaps outer all minus 5, gaps inner all minus 5
@@ -40,7 +43,7 @@ bindsym $mod+Shift+plus gaps outer all minus 5, gaps inner all minus 5
 bindsym $mod+Control+bar gaps horizontal all set 1024
 
 # Reset gapping
-bindsym $mod+Shift+bar gaps outer all set 20px, gaps inner all set 20px
+bindsym $mod+Shift+bar gaps outer all set $outer, gaps inner all set $inner
 
 # Go into super hyper ultra efficiency mode (gapless)
 bindsym $mod+Control+Shift+bar gaps outer all set 0, gaps inner all set 0
