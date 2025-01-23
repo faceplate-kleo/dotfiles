@@ -8,3 +8,10 @@ configuration {
 entry {
     placeholder: "...";
 }
+
+#window {
+  height: 99%;
+  width: 30em;
+  location: west;
+  anchor: west;
+}

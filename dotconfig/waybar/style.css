@@ -1,0 +1,227 @@
+@import "mocha.css";
+* {
+    font-family: JetBrainsMonoNL NF Bold;
+    font-size: 15px;
+}
+
+
+window#waybar {
+    background-color: alpha(@base, 0.5);
+    /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
+    color: @subtext0;
+    transition-property: all;
+    transition-duration: .5s;
+    font-family: JetBrainsMonoNL NF Bold, Noto Sans Mono CJK JP;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover {
+    background-color: @yellow;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: @subtext1;
+    transition: background-color 0.5s ease-in-out;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background-color: @surface1;
+    color: @mauve;
+    box-shadow: inset 0 -3px @blue;
+    border-radius: 2px;
+    transition: box-shadow 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
+  
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#window {
+    margin: 0 4px;
+    font-size: 25px;
+    font-style: italic;
+}
+
+#workspaces {
+    margin: 0 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: @base;
+    font-size: 25px;
+    transition: all 1.0s ease-in-out;
+
+    /*border-radius: 10px;*/
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.modules-right {
+    padding-left: 30px;
+    padding-right: 10px;
+    background: @base;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 10px;
+}
+
+.modules-left {
+    margin-left: 0;
+    padding-right: 30px;
+    padding-left: 10px;
+    background: @base;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 10px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    color: @yellow;
+}
+
+#memory {
+    color: @sky;
+}
+
+#disk {
+    color: @blue;
+}
+
+#network {
+    color: @green;
+}
+
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
+#pulseaudio {
+    color: @text;
+}
+
+#pulseaudio.muted {
+    background-color: @maroon;
+    color: @surface0;
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+.custom-spotify {
+    padding: 0 10px;
+    margin: 0 4px;
+    color: @text;
+    font-family: JetBrainsMonoNL NF Bold, Noto Sans Mono CJK JP;
+}
+
+#clock {
+  color: @teal
+}
+
+#bluetooth {
+    color: @blue
+}
+
+#bluetooth.disabled {
+    color: @subtext1
+}

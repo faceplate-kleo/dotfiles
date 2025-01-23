@@ -12,7 +12,7 @@
 [user]
 	email = itskleonow@gmail.com
 	name = Kleo Davidson
-	signingkey = 57ED2E98F728ACEC
+	signingkey = E659440831D7BC3F
 [push]
 	autoSetupRemote = true
 [core]

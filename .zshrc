@@ -41,6 +41,7 @@ path=(/home/kleo/.local/bin $path)
 path=(/home/kleo/VM $path)
 path=(/home/kleo/.cargo/bin $path)
 path=(/home/kleo/go/bin $path)
+path=(/usr/local/go/bin $path)
 path=("/home/kleo/jetbrains/GoLand-2024.1.2/bin" $path)
 path=("/home/kleo/jetbrains/IntelliJ-IU/bin" $path)
 path=("/home/kleo/jetbrains/RubyMine/bin" $path)
@@ -54,22 +55,28 @@ export NVIM_CONFIG=/home/kleo/.config/nvim
 export I3_CONFIG=/home/kleo/.config/i3/config
 export I3_COMMON_CONFIG=/home/kleo/.config/i3/common-config.i3
 export POLYBAR_CONFIG=/home/kleo/.config/polybar/config.ini
+export KITTY_CONFIG=/home/kleo/.config/kitty/kitty.conf
 export GPG_TTY=$(tty)
-export TERM_PROGRAM="alacritty"
-export TERM_PROGRAM_VERSION=$(alacritty --version | awk '{ print $2 }')
+#export TERM_PROGRAM="alacritty"
+#export TERM_PROGRAM_VERSION=$(alacritty --version | awk '{ print $2 }')
 export CHROME_EXECUTABLE="/snap/bin/chromium"
 
+autoload -U +X compinit && compinit
 source ~/.aliases
 source ~/.completions
+source ~/.cargo/env
 
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [[ ! "$TERM" = linux ]] && [ -z "$TMUX" ] && [ -z "$INSIDE_IDE" ]; then
-  exec tmux
-fi
+#if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [[ ! "$TERM" = linux ]] && [ -z "$TMUX" ] && [ -z "$INSIDE_IDE" ]; then
+#  exec tmux
+#fi
 
-export JAVA_HOME=$(readlink -nf $(which java) | xargs dirname | xargs dirname)
+#export JAVA_HOME=$(readlink -nf $(which java) | xargs dirname | xargs dirname)
 
 set -o vi
 
 [ -f "/home/kleo/.ghcup/env" ] && source "/home/kleo/.ghcup/env" # ghcup-env
 
 eval "$(starship init zsh)"
+alias gimme='. gimme.zsh'
+
+DISABLE_AUTO_TITLE="true"

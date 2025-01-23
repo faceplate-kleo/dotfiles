@@ -1,0 +1,136 @@
+// comment
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    //"height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 5, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/window",
+        "sway/mode",
+        "sway/scratchpad",
+        "custom/media",
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+    ],
+    "modules-right": [
+        "tray",
+        "custom/spotify",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "cpu",
+        "memory",
+        "disk",
+        "clock",
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "󰞷",
+            "2": "󰖟",
+            "3": "󰭹",
+            "4": "󰝚",
+            "5": "",
+            "6": "",
+            "7": "6",
+            "8": "7",
+            "9": "8",
+            "10": "󰊖",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        },
+        "sort_by_name": true,
+        "persistent_workspaces": {
+          "*": [3],
+        },
+        "show_special": true,
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "rewrite": {
+          "(.*) - NVIM": "<span color=\"#A6E3A1\"></span>  $1",
+          "(.*) - Chromium": "<span color=\"#89B4FA\"></span>  $1",
+          "(.*) - Discord": "<span color=\"#89B4FA\"></span>  $1",
+          "Kitty": "<span color=\"#89B4FA\"></span>  $1",
+          "Steam": "<span color=\"#89B4FA\"></span>  Steam",
+          "Friends List": "<span color=\"#89B4FA\"></span>  Friends List",
+        }
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "interval": 1,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%H:%M:%S %Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "disk": {
+        "format": "{percentage_used}% "
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "󰌗",//"{ipaddr}/{cidr} 󰌗",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-connected": " {device_alias}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "{format} 󰝟",
+        "format-icons": {
+            "headphone": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 $HOME/.config/waybar/mediaplayer.py --player spotify",
+        "format": "{} <span color=\"#A6E3A1\"></span>",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    }
+    }
+}

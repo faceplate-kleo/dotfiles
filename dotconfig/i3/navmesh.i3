@@ -23,11 +23,12 @@ client.focused          #313244 #313244 #cdd6f4 #313244 #685480
 client.unfocused        #313244 #313244 #cdd6f4 #313244 #1E1E2E
 client.focused_inactive #313244 #313244 #cdd6f4 #313244 #1E1E2E
 
-exec --no-startup-id picom --config ~/.config/picom.conf
+exec --no-startup-id picom --config ~/.config/picom.conf --backend xrender
 
 # Lock screen
 # bindsym $mod+Control+l exec --no-startup-id light-locker-command -l
-bindsym $mod+Control+l exec --no-startup-id /home/kleo/.config/i3/lock.sh
+# bindsym $mod+Control+l exec --no-startup-id /home/kleo/.config/i3/lock.sh
+bindsym $mod+Control+l exec --no-startup-id dm-tool lock
 
 set $inner 20px
 set $outer 10px
