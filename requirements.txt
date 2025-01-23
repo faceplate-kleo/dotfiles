@@ -11,3 +11,7 @@ gimp
 chromium-browser
 fonts-jetbrains-mono
 solaar
+fuzzel
+waybar
+fastfetch
+dunst
