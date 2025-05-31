@@ -77,6 +77,8 @@ set -o vi
 [ -f "/home/kleo/.ghcup/env" ] && source "/home/kleo/.ghcup/env" # ghcup-env
 
 eval "$(starship init zsh)"
+eval "$(starship completions zsh)"
+eval "$(kind completion zsh)"
 alias gimme='. gimme.zsh'
 
 DISABLE_AUTO_TITLE="true"

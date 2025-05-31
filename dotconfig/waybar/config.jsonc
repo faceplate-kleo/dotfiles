@@ -38,7 +38,7 @@
             "2": "󰖟",
             "3": "󰭹",
             "4": "󰝚",
-            "5": "",
+            "5": "󰅩",
             "6": "",
             "7": "6",
             "8": "7",
@@ -111,8 +111,8 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format": "{volume}% {icon} ",
+        "format-bluetooth": "{volume}% {icon}{format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": "{format} 󰝟",
         "format-icons": {
