@@ -58,7 +58,7 @@
         "format": "{title}",
         "rewrite": {
           "(.*) - NVIM": "<span color=\"#A6E3A1\"></span>  $1",
-          "(.*) - Chromium": "<span color=\"#89B4FA\"></span>  $1",
+          "(.*) - Chromium": "<span color=\"#89B4FA\"></span>   $1",
           "(.*) - Discord": "<span color=\"#89B4FA\"></span>  $1",
           "Kitty": "<span color=\"#89B4FA\"></span>  $1",
           "Steam": "<span color=\"#89B4FA\"></span>  Steam",
@@ -125,8 +125,8 @@
         "on-click": "pavucontrol"
     },
     "custom/spotify": {
-        "exec": "/usr/bin/python3 $HOME/.config/waybar/mediaplayer.py --player spotify",
-        "format": "{} <span color=\"#A6E3A1\"></span>",
+        "exec": "/usr/bin/python3 $HOME/.config/waybar/mediaplayer.py", //--player firefox",
+        "format": "<span color=\"#FF0066\"> 󰝚 </span> {}",
         "return-type": "json",
         "on-click": "playerctl play-pause",
         "on-scroll-up": "playerctl next",

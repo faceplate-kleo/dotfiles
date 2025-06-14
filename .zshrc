@@ -25,6 +25,21 @@ languageprompt () {
     echo $PROMPT_SYMBOL
 }
 
+setopt autocd
+source <(fzf --zsh)
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export MANPAGER="nvim -u ~/.config/nvim/manpager.vim +Man!"
+
+# Catppuccin Macchiato for FZF Previewing
+# https://github.com/catppuccin/fzf/blob/main/themes/catppuccin-fzf-macchiato.sh
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#363A4F,bg:#24273A,spinner:#F4DBD6,hl:#ED8796 \
+--color=fg:#CAD3F5,header:#ED8796,info:#C6A0F6,pointer:#F4DBD6 \
+--color=marker:#B7BDF8,fg+:#CAD3F5,prompt:#C6A0F6,hl+:#ED8796 \
+--color=selected-bg:#494D64 \
+--color=border:#363A4F,label:#CAD3F5"
+
 # NAVMESH
 LOGO_COLOR='yellow'
 PATH_COLOR='blue'
@@ -62,6 +77,7 @@ export GPG_TTY=$(tty)
 export CHROME_EXECUTABLE="/snap/bin/chromium"
 
 autoload -U +X compinit && compinit
+autoload -U colors && colors
 source ~/.aliases
 source ~/.completions
 source ~/.cargo/env

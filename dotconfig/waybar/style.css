@@ -1,7 +1,7 @@
 
 @import "mocha.css";
 * {
-    font-family: JetBrainsMonoNL NF Bold;
+    font-family: Lekton Nerd Font Bold;
     font-size: 15px;
 }
 
@@ -12,7 +12,8 @@ window#waybar {
     color: @subtext0;
     transition-property: all;
     transition-duration: .5s;
-    font-family: JetBrainsMonoNL NF Bold, Noto Sans Mono CJK JP;
+    /*font-family: JetBrainsMonoNL NF Bold, Noto Sans Mono CJK JP;*/
+    font-family: Lekton Nerd Font Bold;
 }
 
 window#waybar.hidden {
@@ -58,6 +59,7 @@ button:hover {
 
 #workspaces button {
     padding: 0 5px;
+    padding-right: 8px;
     background-color: transparent;
     color: @subtext1;
     transition: background-color 0.5s ease-in-out;
@@ -212,8 +214,8 @@ label:focus {
     background-color: #eb4d4b;
 }
 .custom-spotify {
-    padding: 0 10px;
-    margin: 0 4px;
+    padding: 0 100px;
+    margin: 0 40px;
     color: @text;
     font-family: JetBrainsMonoNL NF Bold, Noto Sans Mono CJK JP;
 }
