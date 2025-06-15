@@ -33,12 +33,12 @@ export MANPAGER="nvim -u ~/.config/nvim/manpager.vim +Man!"
 
 # Catppuccin Macchiato for FZF Previewing
 # https://github.com/catppuccin/fzf/blob/main/themes/catppuccin-fzf-macchiato.sh
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#363A4F,bg:#24273A,spinner:#F4DBD6,hl:#ED8796 \
---color=fg:#CAD3F5,header:#ED8796,info:#C6A0F6,pointer:#F4DBD6 \
---color=marker:#B7BDF8,fg+:#CAD3F5,prompt:#C6A0F6,hl+:#ED8796 \
---color=selected-bg:#494D64 \
---color=border:#363A4F,label:#CAD3F5"
+#export FZF_DEFAULT_OPTS=" \
+#--color=bg+:#363A4F,bg:#24273A,spinner:#F4DBD6,hl:#ED8796 \
+#--color=fg:#CAD3F5,header:#ED8796,info:#C6A0F6,pointer:#F4DBD6 \
+#--color=marker:#B7BDF8,fg+:#CAD3F5,prompt:#C6A0F6,hl+:#ED8796 \
+#--color=selected-bg:#494D64 \
+#--color=border:#363A4F,label:#CAD3F5"
 
 # NAVMESH
 LOGO_COLOR='yellow'
@@ -64,6 +64,7 @@ path=("/home/kleo/jetbrains/CLion/bin" $path)
 path=("/home/kleo/jetbrains/WebStorm/bin" $path)
 path=("/home/kleo/jetbrains/PyCharm/bin" $path)
 path=("/home/kleo/Dev/flutter/bin" $path)
+path=("/home/kleo/scripts" $path)
 export PATH
 
 export NVIM_CONFIG=/home/kleo/.config/nvim
@@ -98,3 +99,15 @@ eval "$(kind completion zsh)"
 alias gimme='. gimme.zsh'
 
 DISABLE_AUTO_TITLE="true"
+
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+# Not supported in the "fish" shell.
+(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+source ~/.cache/wal/colors-tty.sh
