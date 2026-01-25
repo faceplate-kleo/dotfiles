@@ -114,6 +114,7 @@ class PlayerManager:
         artist = player.get_artist()
         title = player.get_title()
         title = title.replace("&", "&amp;")
+        artist = artist.replace("&", "&amp;")
 
         track_info = ""
         if player_name == "spotify" and "mpris:trackid" in metadata.keys() and ":ad:" in player.props.metadata["mpris:trackid"]:
@@ -122,6 +123,9 @@ class PlayerManager:
             track_info = f"{artist} - {title}"
         else:
             track_info = title
+
+        trunc = 75
+        track_info = (track_info[:trunc] + '..') if len(track_info) > trunc else track_info
 
         if track_info:
             if player.props.status == "Playing":
