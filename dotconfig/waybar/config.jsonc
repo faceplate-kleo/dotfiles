@@ -17,13 +17,15 @@
   "modules-right": [
     "tray",
     "custom/spotify",
+    "custom/oxithread",
     "pulseaudio",
+    "custom/layoutname",
     "bluetooth",
     "network",
     "cpu",
     "memory",
     "disk",
-    "updates",
+    "custom/updates",
     "clock",
   ],
   // Modules configuration
@@ -82,8 +84,8 @@
     // "timezone": "America/New_York",
     "interval": 1,
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%H:%M:%S}",
-    "format-alt": "{:%H:%M:%S %Y-%m-%d}",
+    "format": "{:%I:%M:%S}",
+    "format-alt": "{:%I:%M:%S %Y-%m-%d}",
   },
   "cpu": {
     "format": "{usage}% ",
@@ -110,7 +112,7 @@
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon} ",
+    "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon}{format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": "{format} 󰝟",
@@ -141,4 +143,21 @@
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates --no-zero-output",
   },
+  "custom/layoutname": {
+    "format": "{}  󰧨 ",
+    "on-click": "/home/kleo/scripts/sizemenu.sh",
+    "exec": "/home/kleo/scripts/poll-size-state.sh",
+  },
+  "custom/oxithread": {
+  "format": " {icon} ",
+    "format-icons": {
+      "active": "<span color=\"#00FF00\">󱜠</span>",
+      "inactive": "󱜡"
+    },
+    "return-type": "json",
+    "on-click": "/home/kleo/scripts/oxithread-toggle.sh",
+    "interval": 1,
+    "exec": "/home/kleo/scripts/oxithread-state.sh",
+    "tooltip-format": "{text}"
+  }
 }

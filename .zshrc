@@ -31,6 +31,8 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export MANPAGER="nvim -u ~/.config/nvim/manpager.vim +Man!"
 
+FZF_CTRL_R_OPTS="--height 50% --preview 'echo {2..} | bat --color=always -pl sh' --preview-window 'wrap,up,5'"
+
 # Catppuccin Macchiato for FZF Previewing
 # https://github.com/catppuccin/fzf/blob/main/themes/catppuccin-fzf-macchiato.sh
 #export FZF_DEFAULT_OPTS=" \
@@ -50,7 +52,6 @@ PATH_COLOR='blue'
 
 PS1='%B%F{$LOGO_COLOR}%f%F{$PATH_COLOR} [%2~] %(1j.($(jobs -s | cut -d " " -f 6)) .)$(languageprompt) %f%b'
 
-#[ -f "/home/kleo/.ghcup/env" ] && source "/home/kleo/.ghcup/env" # ghcup-env
 
 path=(/home/kleo/.local/bin $path)
 path=(/home/kleo/VM $path)
@@ -91,7 +92,6 @@ source ~/.cargo/env
 
 set -o vi
 
-[ -f "/home/kleo/.ghcup/env" ] && source "/home/kleo/.ghcup/env" # ghcup-env
 
 eval "$(starship init zsh)"
 eval "$(starship completions zsh)"
@@ -111,3 +111,5 @@ cat ~/.cache/wal/sequences
 
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
+
+[ -f "/home/kleo/.ghcup/env" ] && . "/home/kleo/.ghcup/env" # ghcup-env
