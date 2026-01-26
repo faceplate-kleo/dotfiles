@@ -1,7 +1,17 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-#format = """$directory\n$character"""
-#right_format = """$all"""
+#format = """$directory$git_status\n$character"""
+
+format = """
+[](blue)\
+$directory\
+[](fg:blue bg:green)\
+$git_branch\
+$git_status\
+$git_metrics\
+[\n](fg:green)\
+$character
+"""
 
 [character]
 success_symbol = '[󰔷](bold blue)'
@@ -9,19 +19,30 @@ error_symbol = '[](bold red)'
 vimcmd_symbol = '[](bold green)'
 
 [directory]
-format = '[\[$path\]]($style)[$read_only]($read_only_style) '
-style = 'italic bright-green'
-#truncation_length = 2
+format = '[\[$path\] ]($style)[$read_only]($read_only_style)'
+style = 'bold bright-white bg:blue'
+read_only_style = 'italic bright-green bg:blue'
 truncate_to_repo = true
 
-#[git_branch]
-#format   = "[$symbol$branch(:$remote_branch)]($style) "
+[git_branch]
+style   = "italic bright-white bg:green"
+format   = "[ $symbol$branch(:$remote_branch) ]($style)"
+
+[git_status]
+format   = "([\\[$all_status$ahead_behind\\] ]($style))"
+style   = "bright-white bg:green"
 
 [git_metrics]
 disabled = false
+added_style   = "white dimmed bg:green"
+deleted_style = "white dimmed bg:green"
+format        = "([+$added ]($added_style))([-$deleted ]($deleted_style))"
 
 [username]
 show_always = false
+
+[package]
+disabled = true
 
 [lua]
 disabled = true
@@ -31,3 +52,4 @@ disabled = true
 disabled = true
 [helm]
 disabled = true
+
